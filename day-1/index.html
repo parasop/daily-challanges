@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title> Javascript Challange Day 1</title>
+</head>
+
+<body id="body">
+
+    <button id="btn"> Click me :) </button>
+
+    <script>
+
+        // when document loaded successfully fetch color from local storage and set it as body  background color
+        document.addEventListener('DOMContentLoaded', () => {
+            const defaultColor = localStorage.getItem("color") || "white"
+            document.body.style.backgroundColor = defaultColor;
+        })
+
+        //this provide  refrence to button
+        const button = document.getElementById("btn");
+
+        //click event, call when button is clicked
+        button.addEventListener("click", () => {
+
+            let body = document.body;
+            if (body.style.backgroundColor === 'black') {
+
+                //set bg color white and store in local storage
+                body.style.backgroundColor = 'white';
+                localStorage.setItem("color", 'white')
+
+            } else {
+
+                   //set bg color black and store in local storage
+                  body.style.backgroundColor = 'black';
+                localStorage.setItem("color", 'black')
+
+            }
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>
